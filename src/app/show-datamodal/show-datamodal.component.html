@@ -1,0 +1,39 @@
+<body>
+
+
+  <h2 style="text-align: center;"> Bank Data:</h2>
+
+  <table style="width:100%">
+    <tr>
+      <th>bank_id:</th>
+      <td>{{dialogData.bank_id}}</td>
+    </tr>
+    <tr>
+      <th>bank_name:</th>
+      <td>{{dialogData.bank_name}}</td>
+    </tr>
+    <tr>
+      <th>address:</th>
+      <td>{{dialogData.address}}</td>
+    </tr>
+    <tr>
+      <th>city:</th>
+      <td>{{dialogData.city}}</td>
+    </tr>
+    <tr>
+      <th>district:</th>
+      <td>{{dialogData.district}}</td>
+    </tr>
+    <tr>
+      <th>ifsc:</th>
+      <td>{{dialogData.ifsc}}</td>
+    </tr>
+    <tr>
+      <th>state:</th>
+      <td>{{dialogData.state}}</td>
+    </tr>
+  </table>
+  <div class="closebtn">
+    <button mat-raised-button color="primary" (click)="closeModal()">Close</button>
+  </div>
+</body>

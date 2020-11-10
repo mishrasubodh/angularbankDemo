@@ -1,0 +1,19 @@
+<div style="margin: 15px;">
+  <div><button mat-raised-button color="primary" style="margin:0 30px 0 15px; " (click)="goback()">Back</button></div>
+
+  <h4>withOut capitalLatter pipe</h4>
+  <ul>
+    <li *ngFor="let color of colors; let i = index" CapitalDirective>
+      {{ i + 1 }} - {{ color.colorName }}
+    </li>
+  </ul>
+
+
+  <h4>with capitalLatter pipe</h4>
+  <ul>
+    <li *ngFor="let color of colors; let i = index" CapitalDirective>
+      {{ i + 1 }} - {{ color.colorName |capitalLatter}}
+    </li>
+  </ul>
+
+</div>

@@ -1,0 +1,81 @@
+<button mat-raised-button color="primary" style="margin:0 30px 0 15px; " (click)="goback()">Back</button>
+<mat-form-field appearance="fill" class="formfield">
+  <mat-label>Select City</mat-label>
+  <mat-select [(value)]="selectedCity" (selectionChange)="getSelectValue($event.value)">
+    <mat-option *ngFor="let city of citys" [value]="city.value">
+      {{city.value}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill" class="formfield">
+  <mat-label>Select Branch</mat-label>
+  <mat-select [(value)]="selectedbranch" (selectionChange)="getBranchValue($event.value)">
+    <mat-option *ngFor="let branchs of ELEMENT_DATA" [value]="branchs.branch">
+      {{branchs.branch}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill" class="formfield">
+  <mat-label>Select address</mat-label>
+  <mat-select [(value)]="selecteaddress" (selectionChange)="getAddressvalue($event.value)">
+    <mat-option *ngFor="let branchs of ELEMENT_DATA" [value]="branchs.branch">
+      {{branchs.address}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+
+
+<!-- <div>
+  <mat-form-field>
+   
+  </mat-form-field>
+</div> -->
+
+<div>
+
+  <div *ngIf="!showData" class="loader">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="bank_name">
+      <th mat-header-cell *matHeaderCellDef> bank_name </th>
+      <td mat-cell *matCellDef="let element"> {{element.bank_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> city </th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="district">
+      <th mat-header-cell *matHeaderCellDef> district </th>
+      <td mat-cell *matCellDef="let element"> {{element.district}} </td>
+    </ng-container>
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef> state </th>
+      <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="open">
+      <th mat-header-cell *matHeaderCellDef> open </th>
+      <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary"
+          (click)="openModal(element)">Open</button></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+  <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[10, 15, 20]">
+  </mat-paginator>
+</div>
